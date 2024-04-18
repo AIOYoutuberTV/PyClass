@@ -1,4 +1,7 @@
+from numpy import sort
+
+
 treasure = [int(input()),int(input()),int(input())]
 treasureVetted = sort(treasure)
 
-print(treasureVetted[2]+treasureVetted[3])
+print(treasureVetted[1] + treasureVetted[2])
