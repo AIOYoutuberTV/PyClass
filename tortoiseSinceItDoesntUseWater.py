@@ -16,3 +16,5 @@ while colourStart != colourEnd:
     tortoise.forward(2)
     tortoise.color(hexToColourCode(colourStart-colourDiff)) 
 tortoise.done()
+
+#TODO: Figure out whatever is going on here
