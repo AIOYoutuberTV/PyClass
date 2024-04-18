@@ -1,6 +1,8 @@
-from numpy import sort
+treasure = [int(input()) , int(input()) , int(input())]
 
-treasure = [int(input()),int(input()),int(input())]
-treasureVetted = sort(treasure)
-
-print(treasureVetted[1] + treasureVetted[2])
+if treasure[0] < treasure[1] and treasure[0] < treasure[2]:
+    print(treasure[1]+treasure[2])
+elif treasure[0] > treasure[1] and treasure[0] < treasure[2]:
+    print(treasure[0]+treasure[2])
+else:
+    print(treasure[0]+treasure[1])
