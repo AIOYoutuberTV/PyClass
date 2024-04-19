@@ -1,8 +1,8 @@
 treasure = [int(input()) , int(input()) , int(input())]
 
 i = 0
-rm1 = 0
-rm2 = 0
+rm1 = -10**4299
+rm2 = -10**4299
 while i < len(treasure):
     if rm1 < treasure[i]:
         rm2 = rm1
