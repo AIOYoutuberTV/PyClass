@@ -1,3 +1,4 @@
+from random import randint
 import turtle as tortoise
 import colorsys
 #Since Py provides no public/local var sytem, I've made my own.
@@ -31,28 +32,48 @@ def HSVInterpol(a,b,f):
             c[i] = a[i]+(b[i]-a[i])*f
         return c
 
+def incrementWidth(width):
+       return width + 1
+
 hsvStart = RGBToHSV(colourStart)
 hsvEnd = RGBToHSV(colourEnd)
 
 
-
 #Length of this object, should(must) be divisible by step
-length = 20
+length = 300
 
 #Step Distance
-step = 2
+step = 5
 
+tortoise.bgcolor("black")
+
+for i in range(100):
+        tortoise.color("white")
+        tortoise.up()
+        tortoise.speed(100)
+        tortoise.goto(randint(-350,350),randint(-350,350))
+        tortoise.down()
+        tortoise.dot(randint(1,5))
 
 iterations = int(length/step)
 
 tortoise.width(5)
 tortoise.color(HSVToColorCode(*hsvStart))
-tortoise.up();tortoise.setx(-350);tortoise.down()
+tortoise.up();tortoise.setx(-320);tortoise.sety(20);tortoise.down()
+tortoise.right(45)
 for i in range(iterations):
         
         hsvCurrent = HSVInterpol(hsvStart,hsvEnd,(i+1)/iterations)
         
         tortoise.forward(step)
         tortoise.color(HSVToColorCode(*hsvCurrent))
-	
+        tortoise.width(incrementWidth(tortoise.width()))
+        tortoise.left(0.2)
+
+tortoise.up();tortoise.left(45);tortoise.back(8);tortoise.forward(17);tortoise.right(180);tortoise.right(90);tortoise.forward(24);tortoise.left(90);tortoise.left(22.5);tortoise.forward(10);tortoise.right(22.5);tortoise.down()
+tortoise.width(10)
+tortoise.color("white")
+tortoise.begin_fill()
+tortoise.circle(20)
+tortoise.end_fill()
 tortoise.done()
